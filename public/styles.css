@@ -1,0 +1,86 @@
+body{
+    background-color: rgb(20, 20, 20);
+    margin: 0%;
+    padding: 0%;
+    font-family: Bahnschrift;
+    color: aliceblue;
+}
+.navbar{
+    padding: 20px;
+    justify-content: space-between;
+    display: flex;
+
+    box-shadow:  0px 4px 12px #000000,
+             0px -4px 12px #000000;
+}
+.nav{
+    display: flex;
+}
+.navItem{
+    margin: auto;
+    margin-left: 20px;
+    font-size: large;
+    color: rgb(187, 187, 187);
+    text-decoration: none;
+}
+.navItem:hover{
+    
+    transform:scale(1.5); 
+    -webkit-transform:scale(1.03);
+    -o-transform:scale(1.03);
+}
+#thisPage{
+    font-weight: 800;
+    color: aliceblue;
+}
+.name{
+    color: aliceblue;
+    /*font-family: PTSans-Bold;*/
+    font-weight: 1000;
+    font-size:xx-large;
+}
+video{
+    border-radius: 20px;
+    width: 40%;
+    margin: 20px;
+}
+.pfp{
+    margin: 16px;
+    border-radius: 50%;
+}
+.about{
+    display: flex;
+    align-items: center;
+    margin-right: 64px;
+    margin-left: 48px;
+}
+imp{
+
+}
+.footer{
+    color: aliceblue;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: space-between;
+    font-size: large;
+    display: flex;
+    align-items: center;
+    
+    box-shadow:  0px -4px 12px #000000, 0px 4px 0px #000000;
+}
+.socialLink{
+    width: 30px;
+    margin-right: 18px;
+}
+@font-face{
+    font-family: "PTSans";
+    src: url("assets/PTSans.ttf") format("truetype");
+  }
+
+  @font-face{
+    font-family: "PTSans-Bold";
+    src: url("assets/PTSans-Bold.ttf") format("truetype");
+  }
