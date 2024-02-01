@@ -6,9 +6,8 @@
 <div class="navbar">
         <div class="name">ABDULLAH ASIM🕹️</div>
         <div class="nav">
-            <a href="index.html" class="navItem">PORTFOLIO</a>
+            <a href="index.html" id='thisPage' class="navItem">PORTFOLIO</a>
             <a href="Resume.html" class="navItem">RESUME</a>
-            <a href="About.html" class="navItem"id="thisPage">ABOUT</a>
         </div>
     </div>
     <!--<video src="assets/DRLTrailer.mp4" controls></video>!-->
@@ -17,6 +16,22 @@
         <p>
             Hi there!<br>Abdullah Asim here, the wizard behind thrilling games and innovative software. <br>Leading game development at M.H.F.L Studios, I've crafted epic experiences. As Founder of Simp Studios, I've reached over 11,300 downloads globally, and as the brains behind The Pro Programmer, I've tackled diverse client requirements. I'm fluent in Unity, Android, and a  of programming languages, weaving magic into every line of code. Join me on this epic quest where pixels meet limitless possibilities!
         </p>
+    </div>
+
+    <div class = "experiences">
+        @foreach($experiences as $experience)
+        <div class="completebox">
+            <img class = 'experienceImage' src="{{url($experience->image)}}" width="150px" height="150px">
+            <div id = "details">
+                <h1><u>{{$experience->name}}</u></h1>
+                <p>{!! str_replace('.', '.<br>', $experience->details) !!}</p>
+            </div>
+        </div>
+        @endforeach
+    </div>
+
+    <div class = "projects">
+        <h3>Projects</h3>
     </div>
     <div class="footer">
             &copy 2024 Abdullah Asim

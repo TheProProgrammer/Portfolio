@@ -48,14 +48,26 @@ video{
     margin: 16px;
     border-radius: 50%;
 }
+.experienceImage{
+    border-radius: 50%;
+}
 .about{
     display: flex;
     align-items: center;
     margin-right: 64px;
     margin-left: 48px;
 }
-imp{
-
+.projects{
+    display: flex;
+    align-items: center;
+}
+.completebox{
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    background-color: #3d3d3d;
+    border-radius: 20px;
+    padding: 10px;
 }
 .footer{
     color: aliceblue;
