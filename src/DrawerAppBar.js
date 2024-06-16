@@ -63,18 +63,22 @@ function DrawerAppBar(props) {
           <Typography
       variant="h6"
       component="div"
-      sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+      sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, fontFamily:"Ubuntu" }}
     >
-      <Box component="span" sx={{ color: 'blue' }}>
-        Abdullah
+      <Box component="span" sx={{ color: '#37A4DC', fontWeight:'bold' }}>
+        ABDULLAH
       </Box>
-      <Box component="span" sx={{ color: 'red' }}>
-        {' '}Asim
+      <Box component="span" sx={{ color: '#EE4338', fontWeight:'bold'}}>
+        {' '}ASIM
       </Box>
     </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{fontWeight:'bold'}}>
+              <Button key={item} sx={
+                {fontWeight:'bold', fontFamily:"Ubuntu", '&:hover': {
+          backgroundColor: '#9EE3F0', // Hover background color
+        }}}
+                >
                 {item}
               </Button>
             ))}
