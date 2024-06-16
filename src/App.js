@@ -1,9 +1,11 @@
 import './App.css';
+import React from 'react';
+import DrawerAppBar from './DrawerAppBar';
 
 function App() {
   return (
-    <div>
-
+    <div class = "body">
+      <DrawerAppBar/>
     </div>
   );
 }
