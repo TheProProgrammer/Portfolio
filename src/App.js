@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import DrawerAppBar from "./DrawerAppBar";
-import { Card, List, Chip } from "@mui/material";
+import { Card, Chip } from "@mui/material";
 
 const experiences = [
   {
@@ -64,29 +64,21 @@ const experiences = [
 
 function App() {
   return (
-    <div class="body" style={{ fontFamily: "Ubuntu" }}>
+    <div class="body">
       <DrawerAppBar />
-      <div class="home" style={{ minHeight: "100" }}>
-        <Experiences />
-      </div>
+      <Experiences />
     </div>
   );
 }
 
 function Experiences() {
   return (
-    <div style={{ margin: "24px" }}>
+    <div class="experiences">
       <center>
-        <h2 style={{ width: "100%", color: "#EE4338" }}>EXPERIENCES</h2>
+        <h2 class = "sectionHeading">EXPERIENCES</h2>
       </center>
       <div>
-        <ul
-          style={{
-            alignItems: "center",
-            padding: "0px",
-            paddingInlineStart: "0px",
-          }}
-        >
+        <ul class="experiencesCardsList">
           {experiences.map((item) => (
             <Card
               sx={{
@@ -95,8 +87,8 @@ function Experiences() {
                 marginBottom: "40px",
                 paddingLeft: "50px",
                 justifyContent: "center",
-                marginLeft: "5%",
-                marginRight: "5%",
+                marginLeft: "10%",
+                marginRight: "10%",
                 backgroundColor:"#F2F2F2",
                 "&:hover": {
                   boxShadow: "0px 2px 3px 3px #FC9F8C",
@@ -104,20 +96,12 @@ function Experiences() {
               }}
               elevation={5}
             >
-              <div style={{ display: "flex", flexDirection:"center", margin: "10px" }}>
-                <div style={{ width: "40%",
-                  display: 'flex',
-                  justifyContent: "center",
-                  alignItems: 'center'}}>
+              <div class = "experienceCardInside">
+                <div class = "experienceCardCompanySection">
                   <div style={{ textAlign: "center" }}>
                     <img
+                    class = "experienceCardCompanyLogo"
                       src={item.image}
-                      style={{ width: "100px",
-                        borderRadius: 100 / 2,
-                        borderWidth: 3,
-                        overflow: 'hidden',
-                        borderColor: "red" }} 
-                      
                       alt="icon"
                     />
                     <h2 style={{ fontWeight: "bold", color: "#37A4DC" }}>
@@ -134,10 +118,7 @@ function Experiences() {
                     </ul>
                   </div>
                 </div>
-                <div style={{ width: "60%",
-                  display: 'flex',
-                  justifyContent: "center",
-                  alignItems: 'center' }}>
+                <div class="experienceCardDescription">
                   <ul style={{ listStyleType: "disc", padding: "30px" }}>
                     {item.description.map((item) => (
                       <li>{item}</li>
@@ -152,4 +133,5 @@ function Experiences() {
     </div>
   );
 }
+
 export default App;

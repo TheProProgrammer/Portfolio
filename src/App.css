@@ -1,3 +1,40 @@
-body{
+.body{
   padding: 8px;
+  font-family: Ubuntu;
+}
+.experiences{
+  margin: 24px;
+}
+.sectionHeading{
+  width: 100%;
+  color: #EE4338; 
+}
+.experiencesCardsList{
+  align-items: center;
+  padding: 0px;
+  padding-inline-start: 0px;
+}
+.experienceCardInside{
+  display: flex;
+  flex-direction:center;
+  margin: 10px;
+}
+.experienceCardCompanyLogo{
+  width: 100px;
+  border-radius: 50%;
+  border-width: 3;
+  overflow: hidden;
+  border-color: red;
+}
+.experienceCardDescription{
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.experienceCardCompanySection{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
