@@ -16,7 +16,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 const drawerWidth = 240;
-const navItems = ['About', 'Tech', 'Projects', 'Experience', 'Contact'];
+const navItems = ['About', 'Tech', 'Projects', 'Experiences', 'Contact'];
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -66,16 +66,13 @@ function DrawerAppBar(props) {
       sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, fontFamily:"Ubuntu" }}
     >
       <Box component="span" sx={{ color: '#37A4DC', fontWeight:'bold' }}>
-        ABDULLAH
-      </Box>
-      <Box component="span" sx={{ color: '#EE4338', fontWeight:'bold'}}>
-        {' '}ASIM
+        ABDULLAH ASIM
       </Box>
     </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
               <Button key={item} sx={
-                {fontWeight:'bold', fontFamily:"Ubuntu", '&:hover': {
+                {fontWeight:'bold', color:"#EE4338", fontFamily:"Ubuntu", '&:hover': {
           backgroundColor: '#9EE3F0', // Hover background color
         }}}
                 >
