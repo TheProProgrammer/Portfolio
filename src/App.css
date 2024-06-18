@@ -45,11 +45,31 @@
   padding: 24px;
   background-color: #cef8ff;
 }
+.recommendationsList{
+  padding: 0px;
+  text-align: center;
+}
 .recommendation{
+  width: 90%;
+  max-width: 1000px;
   margin-bottom: 10px;
   border-radius: 10px;
   box-shadow: 0px 0px 4px 4px #0000003a;
 }
 .recommendation:hover{
   box-shadow: 0px 0px 4px 4px #f0ae9e;
+}
+
+.footer{
+  height: 50px;
+  background-color: #303030;
+  text-align: center;
+  color: #ffffff;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+special{
+  color: #EE4338;
 }

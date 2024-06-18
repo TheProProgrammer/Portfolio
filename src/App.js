@@ -75,6 +75,9 @@ function App() {
       <DrawerAppBar />
       <Experiences />
       <Recommendations />
+      <footer class="footer">
+        <span>Designed and Developed in ReactJS by <special> Abdullah Asim</special></span>
+      </footer>
     </div>
   );
 }
@@ -98,6 +101,7 @@ function Experiences() {
                 marginLeft: "10%",
                 marginRight: "10%",
                 backgroundColor: "#FFFF",
+                maxWidth:"1000px",
                 "&:hover": {
                   boxShadow: "0px 0px 4px 4px #9EE3F0",
                 },
@@ -161,5 +165,4 @@ function Recommendations() {
     </div>
   );
 }
-
 export default App;
