@@ -41,9 +41,9 @@ const experiences = [
     description: [
       "Established and directed my own Apps & Games Studio.",
       "Designed, Developed, Tested and Published functional Games and Apps for the Google Play Store.",
-      "Achieved a total of ~11,300 downloads across ~172 different countries and territories."
+      "Achieved a total of ~11,300 downloads across ~172 different countries and territories.",
     ],
-  },  
+  },
   {
     company: "The Pro Programmer",
     position: "Director | Lead Software Engineer",
@@ -57,9 +57,16 @@ const experiences = [
       "Operating over numerous different social platforms developing solutions for clients across the globe.",
       "Worked with numerous small and large-scale Local and International corporations.",
       "Clients relating to the Architecture, Automotive, Real Estate, Gaming, and many more industries.",
-      "Proof of work can be provided on demand."
+      "Proof of work can be provided on demand.",
     ],
   },
+];
+
+const recommendations = [
+  require("./assets/recs/rec1.png"),
+  require("./assets/recs/rec2.png"),
+  require("./assets/recs/rec3.png"),
+  require("./assets/recs/rec4.png"),
 ];
 
 function App() {
@@ -67,6 +74,7 @@ function App() {
     <div class="body">
       <DrawerAppBar />
       <Experiences />
+      <Recommendations />
     </div>
   );
 }
@@ -75,7 +83,7 @@ function Experiences() {
   return (
     <div class="experiences">
       <center>
-        <h2 class = "sectionHeading">EXPERIENCES</h2>
+        <h2 class="sectionHeading">EXPERIENCES</h2>
       </center>
       <div>
         <ul class="experiencesCardsList">
@@ -83,24 +91,24 @@ function Experiences() {
             <Card
               sx={{
                 padding: "20px",
-                borderRadius: 5,
+                borderRadius: 3,
                 marginBottom: "40px",
                 paddingLeft: "50px",
                 justifyContent: "center",
                 marginLeft: "10%",
                 marginRight: "10%",
-                backgroundColor:"#F2F2F2",
+                backgroundColor: "#FFFF",
                 "&:hover": {
-                  boxShadow: "0px 2px 3px 3px #FC9F8C",
+                  boxShadow: "0px 0px 4px 4px #9EE3F0",
                 },
               }}
               elevation={5}
             >
-              <div class = "experienceCardInside">
-                <div class = "experienceCardCompanySection">
+              <div class="experienceCardInside">
+                <div class="experienceCardCompanySection">
                   <div style={{ textAlign: "center" }}>
                     <img
-                    class = "experienceCardCompanyLogo"
+                      class="experienceCardCompanyLogo"
                       src={item.image}
                       alt="icon"
                     />
@@ -113,7 +121,10 @@ function Experiences() {
                     </h6>
                     <ul style={{ padding: "0px" }}>
                       {item.toolsAndTech.map((item) => (
-                        <Chip label={item} style={{ margin: "5px", backgroundColor:"#9EE3F0"}} />
+                        <Chip
+                          label={item}
+                          style={{ margin: "5px", backgroundColor: "#9EE3F0" }}
+                        />
                       ))}
                     </ul>
                   </div>
@@ -127,6 +138,23 @@ function Experiences() {
                 </div>
               </div>
             </Card>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function Recommendations() {
+  return (
+    <div class="recommendations">
+      <center>
+        <h2 class="sectionHeading">RECOMMENDATIONS</h2>
+      </center>
+      <div>
+        <ul class="recommendationsList">
+          {recommendations.map((item) => (
+            <img class = "recommendation" src={item}/>
           ))}
         </ul>
       </div>

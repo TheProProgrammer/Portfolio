@@ -1,9 +1,10 @@
 .body{
-  padding: 8px;
+  /*padding: 8px;*/
   font-family: Ubuntu;
 }
 .experiences{
-  margin: 24px;
+  padding: 24px;
+  background-color: #fff3f2;
 }
 .sectionHeading{
   width: 100%;
@@ -37,4 +38,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+.recommendations{
+  padding: 24px;
+  background-color: #cef8ff;
+}
+.recommendation{
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px 4px #0000003a;
+}
+.recommendation:hover{
+  box-shadow: 0px 0px 4px 4px #f0ae9e;
 }
