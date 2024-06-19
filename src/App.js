@@ -1,5 +1,4 @@
 import "./App.css";
-import CallIcon from '@mui/icons-material/Call';
 import React from "react";
 import DrawerAppBar from "./DrawerAppBar";
 import { Card, Chip } from "@mui/material";
@@ -12,10 +11,10 @@ const experiences = [
     image: require("./assets/texinity.jpg"),
     duration: "April 2024 - June 2024",
     description: [
-      "Developed a story-mode simulation game using Unity.",
-      "Designed and developed 6+ levels along with their UI, environment and the core game loop.",
-      "Integrated proprietary hardware within the Game.",
-      "Integrated an AI assistant and numerous other third-party SDKs.",
+      "Developed a <b>story-mode simulation game</b> using Unity.",
+      "Designed and developed <b>6+ levels</b> along with their UI, environment and the core game loop.",
+      "Integrated <b>proprietary hardware</b> within the Game.",
+      "Integrated an <b>AI assistant</b> and numerous other third-party SDKs.",
       "Debugged and revised features numerous times to exactly fit the client's needs.",
     ],
   },
@@ -26,10 +25,10 @@ const experiences = [
     toolsAndTech: ["Unity 3D", "Blender"],
     duration: "August 2023 - Current",
     description: [
-      "Led development as Senior Game Developer.",
+      "Led development as <b>Senior Game Developer</b>.",
       "Utilized remote collaboration tools, implementing a seamless remote work experience.",
       "Orchestrated successful cooperation among developers, artists, and marketers to achieve successful projects.",
-      "Mastered the art of leading the development team, exceeding module development schedules.",
+      "Mastered the art of <b>leading the development team</b>, exceeding module development schedules.",
       "Reverse-engineered and modified some open-source codebases to fit our project's specific needs.",
     ],
   },
@@ -42,7 +41,7 @@ const experiences = [
     description: [
       "Established and directed my own Apps & Games Studio.",
       "Designed, Developed, Tested and Published functional Games and Apps for the Google Play Store.",
-      "Achieved a total of ~11,300 downloads across ~172 different countries and territories.",
+      "Achieved a total of <b>~11,300 downloads</b> across <b>~172 different countries</b> and territories.",
     ],
   },
   {
@@ -53,7 +52,7 @@ const experiences = [
     duration: "Jan 2017 - Current",
     description: [
       "Director & Lead software developer at my own small start-up, providing software development services.",
-      "Achieved a turnover equivalent to a thousand dollars even before my 18th birthday.",
+      "Achieved a turnover equivalent to a <b>thousand dollars</b> even before my 18th birthday.",
       "Hired client acquisition and lead generation experts.",
       "Operating over numerous different social platforms developing solutions for clients across the globe.",
       "Worked with numerous small and large-scale Local and International corporations.",
@@ -136,9 +135,9 @@ function Experiences() {
                 </div>
                 <div class="experienceCardDescription">
                   <ul style={{ listStyleType: "disc", padding: "30px" }}>
-                    {item.description.map((item) => (
-                      <li>{item}</li>
-                    ))}
+                    {item.description.map((item1) => (
+                      <BoldListItem item={item1} />
+                      ))}
                   </ul>
                 </div>
               </div>
@@ -159,7 +158,7 @@ function Recommendations() {
       <div>
         <ul class="recommendationsList">
           {recommendations.map((item) => (
-            <img class = "recommendation" src={item}/>
+            <img class = "recommendation" src={item} alt="recommendation"/>
           ))}
         </ul>
       </div>
@@ -177,4 +176,9 @@ function Connect(){
   )
 }
 
+const BoldListItem = ({ item }) => {
+  return (
+    <li dangerouslySetInnerHTML={{ __html: item }}></li>
+  );
+};
 export default App;
