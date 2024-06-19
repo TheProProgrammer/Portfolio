@@ -14,6 +14,11 @@
   align-items: center;
   padding: 0px;
   padding-inline-start: 0px;
+
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .experienceCardInside{
   display: flex;
@@ -51,13 +56,18 @@
 }
 .recommendation{
   width: 90%;
-  max-width: 1000px;
-  margin-bottom: 10px;
+  max-width: 800px;
+  margin: 10px;
   border-radius: 10px;
   box-shadow: 0px 0px 4px 4px #0000003a;
 }
 .recommendation:hover{
   box-shadow: 0px 0px 4px 4px #f0ae9e;
+}
+
+.connect{
+  padding: 24px;
+  background-color: #fff3f2;
 }
 
 .footer{
@@ -72,4 +82,30 @@
 }
 special{
   color: #EE4338;
+}
+
+@media (max-width: 768px) {
+  .experienceCardInside{
+    display: flex;
+    flex-direction:column;
+    margin: 10px;
+  }
+.experienceCardDescription{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.experienceCardCompanySection{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+@media (max-width: 425px) {
+.experienceCardInside{
+  font-size: 3vw;
+}
+}
 }

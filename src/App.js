@@ -1,4 +1,5 @@
 import "./App.css";
+import CallIcon from '@mui/icons-material/Call';
 import React from "react";
 import DrawerAppBar from "./DrawerAppBar";
 import { Card, Chip } from "@mui/material";
@@ -75,6 +76,7 @@ function App() {
       <DrawerAppBar />
       <Experiences />
       <Recommendations />
+      <Connect/>
       <footer class="footer">
         <span>Designed and Developed in ReactJS by <special> Abdullah Asim</special></span>
       </footer>
@@ -96,7 +98,6 @@ function Experiences() {
                 padding: "20px",
                 borderRadius: 3,
                 marginBottom: "40px",
-                paddingLeft: "50px",
                 justifyContent: "center",
                 marginLeft: "10%",
                 marginRight: "10%",
@@ -165,4 +166,15 @@ function Recommendations() {
     </div>
   );
 }
+
+function Connect(){
+  return(
+    <div class="connect">
+      <center>
+        <h2 class="sectionHeading">LET'S CONNECT</h2>
+      </center>
+    </div>
+  )
+}
+
 export default App;
