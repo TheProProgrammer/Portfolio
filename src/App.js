@@ -73,12 +73,79 @@ function App() {
   return (
     <div class="body">
       <DrawerAppBar />
+      <About />
       <Experiences />
       <Recommendations />
-      <Connect/>
+      <Connect />
       <footer class="footer">
-        <span>Designed and Developed in ReactJS by <special> Abdullah Asim</special></span>
+        <span>
+          Designed and Developed in ReactJS by <special> Abdullah Asim</special>
+        </span>
       </footer>
+    </div>
+  );
+}
+
+function About() {
+  return (
+    <div class="about">
+      <img src={require("./assets/me.png")} class="myPic" />
+      <div class="name">
+        <span>
+          <b>Abdullah</b> Asim
+        </span>
+      </div>
+      <div class="links">
+        <a href="https://www.instagram.com/theproprogrammer" target="_blank">
+          <i
+            className="social-icon fa-brands fa-instagram"
+            style={{ color: "#ffffff" }}
+          ></i>
+        </a>
+        <a href="https://www.linkedin.com/in/abdullah-asim-2004/" target="_blank">
+          <i
+            className="social-icon fa-brands fa-linkedin"
+            style={{ color: "#ffffff" }}
+          ></i>
+        </a>
+        <a href="https://www.facebook.com/StudiosDeSimp/" target="_blank">
+          <i
+            className="social-icon fa-brands fa-facebook"
+            style={{ color: "#ffffff" }}
+          ></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UCmRoGehyqEmDQLLQDh4610A" target="_blank">
+          <i
+            className="social-icon fa-brands fa-youtube"
+            style={{ color: "#ffffff" }}
+          ></i>
+        </a>
+        <a href="https://github.com/TheProProgrammer" target="_blank">
+          <i
+            className="social-icon fa-brands fa-github"
+            style={{ color: "#ffffff" }}
+          ></i>
+        </a>
+        <a href="https://twitter.com/thepprogrammer" target="_blank">
+          <i
+            className="social-icon fa-brands fa-twitter"
+            style={{ color: "#ffffff" }}
+          ></i>
+        </a>
+        <a href="https://discord.com/users/1134147456964239584" target="_blank">
+          <i
+            className="social-icon fa-brands fa-discord"
+            style={{ color: "#ffffff" }}
+          ></i>
+        </a>
+        <a href="https://wa.me/923490569480" target="_blank">
+          <i
+            className="social-icon fa-brands fa-whatsapp"
+            style={{ color: "#ffffff" }}
+          ></i>
+        </a>
+      </div>
+
     </div>
   );
 }
@@ -101,7 +168,7 @@ function Experiences() {
                 marginLeft: "10%",
                 marginRight: "10%",
                 backgroundColor: "#FFFF",
-                maxWidth:"1000px",
+                maxWidth: "1000px",
                 "&:hover": {
                   boxShadow: "0px 0px 4px 4px #9EE3F0",
                 },
@@ -137,7 +204,7 @@ function Experiences() {
                   <ul style={{ listStyleType: "disc", padding: "30px" }}>
                     {item.description.map((item1) => (
                       <BoldListItem item={item1} />
-                      ))}
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -158,7 +225,7 @@ function Recommendations() {
       <div>
         <ul class="recommendationsList">
           {recommendations.map((item) => (
-            <img class = "recommendation" src={item} alt="recommendation"/>
+            <img class="recommendation" src={item} alt="recommendation" />
           ))}
         </ul>
       </div>
@@ -166,19 +233,17 @@ function Recommendations() {
   );
 }
 
-function Connect(){
-  return(
+function Connect() {
+  return (
     <div class="connect">
       <center>
         <h2 class="sectionHeading">LET'S CONNECT</h2>
       </center>
     </div>
-  )
+  );
 }
 
 const BoldListItem = ({ item }) => {
-  return (
-    <li dangerouslySetInnerHTML={{ __html: item }}></li>
-  );
+  return <li dangerouslySetInnerHTML={{ __html: item }}></li>;
 };
 export default App;

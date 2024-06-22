@@ -1,7 +1,43 @@
+a{
+  text-decoration: none;
+}
+
 .body{
   /*padding: 8px;*/
   font-family: Ubuntu;
 }
+
+.about{
+  width: 100%;
+  height: 95vh;
+  background-color: #9fd8ff;
+  position: relative;
+  .name{
+    position: absolute;
+    top: 30%;
+    left:10%;
+    width: 500px;
+    font-size: xxx-large;
+    white-space: nowrap;
+    color: #EE4338;
+  }
+  .links{
+    position: absolute;
+    top:40%;
+    left: 10%;
+    width: 380px;
+    display: flex;
+    justify-content: space-between
+    }
+}
+
+.myPic{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+}
+
 .experiences{
   padding: 24px;
   background-color: #fff3f2;
@@ -15,7 +51,6 @@
   padding: 0px;
   padding-inline-start: 0px;
 
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -83,6 +118,45 @@
 special{
   color: #EE4338;
 }
+.social-icon{
+  transition-property: all;
+  transition-duration: 200ms;
+  
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  text-align: center;
+  padding: 0;
+  background-color:#1861e7;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+
+  -webkit-border-radius: 20px;
+ -moz-border-radius: 20px;
+ border-radius: 20px;
+ -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 5px;
+ -moz-box-shadow: rgba(0,0,0,0.8) 0 0 5px;
+ box-shadow: rgba(0,0,0,0.8) 0 0 5px;
+}
+.social-icon:hover{
+  transition-property: all;
+  transition-duration: 200ms;
+  width: 45px;
+  height: 45px;
+
+  font-size: 1.5rem;
+
+  -webkit-border-radius: 20px;
+ -moz-border-radius: 20px;
+ border-radius: 20px;
+ -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
+ -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+ box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+}
+
 
 @media (max-width: 768px) {
   .experienceCardInside{
@@ -103,9 +177,17 @@ special{
   align-items: center;
   white-space: nowrap;
 }
+.myPic{
+  
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+}
+}
 @media (max-width: 425px) {
-.experienceCardInside{
-  font-size: 3vw;
-}
-}
+  .experienceCardInside{
+    font-size: 3vw;
+  }
 }
