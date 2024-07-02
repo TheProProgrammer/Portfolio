@@ -28,7 +28,35 @@ a{
     width: 380px;
     display: flex;
     justify-content: space-between
+  }
+  .mySummary{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top:85%;
+    left: 1%;
+    width: 58%;
+    text-align: center;
+    color: #EE4338;
+    font-size: larger;
+    .statBlock{
+      display: flex;
+      flex-direction: row;
+      margin: 1%;
+      padding: 1%;
+      border-radius: 10px;
+    .number{
+      font-weight: 800;
+      text-align: center;
+      height: 100%;
     }
+    .desc{
+      font-weight: 400;
+      font-size: medium;
+      color: #db8882;
+    }
+    }
+  }
 }
 
 .myPic{

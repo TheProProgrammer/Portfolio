@@ -62,6 +62,41 @@ const experiences = [
   },
 ];
 
+const socialLinks = [
+  {
+    link: "https://www.instagram.com/theproprogrammer",
+    className: "fa-brands fa-instagram",
+  },
+  {
+    link: "https://www.linkedin.com/in/abdullah-asim-2004/",
+    className: "fa-brands fa-linkedin",
+  },
+  {
+    link: "https://www.facebook.com/StudiosDeSimp/",
+    className: "fa-brands fa-facebook",
+  },
+  {
+    link: "https://www.youtube.com/channel/UCmRoGehyqEmDQLLQDh4610A",
+    className: "fa-brands fa-youtube",
+  },
+  {
+    link: "https://github.com/TheProProgrammer",
+    className: "fa-brands fa-github",
+  },
+  {
+    link: "https://twitter.com/thepprogrammer",
+    className: "fa-brands fa-twitter",
+  },
+  {
+    link: "https://discord.com/users/1134147456964239584",
+    className: "fa-brands fa-discord",
+  },
+  {
+    link: "https://wa.me/923490569480",
+    className: "fa-brands fa-whatsapp",
+  },
+];
+
 const recommendations = [
   require("./assets/recs/rec1.png"),
   require("./assets/recs/rec2.png"),
@@ -96,56 +131,26 @@ function About() {
         </span>
       </div>
       <div class="links">
-        <a href="https://www.instagram.com/theproprogrammer" target="_blank">
-          <i
-            className="social-icon fa-brands fa-instagram"
-            style={{ color: "#ffffff" }}
-          ></i>
+      {socialLinks.map((social, index) => (
+        <a href={social.link} target="_blank" rel="noopener noreferrer" key={index}>
+          <i className={`social-icon ${social.className}`} style={{ color: "#ffffff" }}></i>
         </a>
-        <a href="https://www.linkedin.com/in/abdullah-asim-2004/" target="_blank">
-          <i
-            className="social-icon fa-brands fa-linkedin"
-            style={{ color: "#ffffff" }}
-          ></i>
-        </a>
-        <a href="https://www.facebook.com/StudiosDeSimp/" target="_blank">
-          <i
-            className="social-icon fa-brands fa-facebook"
-            style={{ color: "#ffffff" }}
-          ></i>
-        </a>
-        <a href="https://www.youtube.com/channel/UCmRoGehyqEmDQLLQDh4610A" target="_blank">
-          <i
-            className="social-icon fa-brands fa-youtube"
-            style={{ color: "#ffffff" }}
-          ></i>
-        </a>
-        <a href="https://github.com/TheProProgrammer" target="_blank">
-          <i
-            className="social-icon fa-brands fa-github"
-            style={{ color: "#ffffff" }}
-          ></i>
-        </a>
-        <a href="https://twitter.com/thepprogrammer" target="_blank">
-          <i
-            className="social-icon fa-brands fa-twitter"
-            style={{ color: "#ffffff" }}
-          ></i>
-        </a>
-        <a href="https://discord.com/users/1134147456964239584" target="_blank">
-          <i
-            className="social-icon fa-brands fa-discord"
-            style={{ color: "#ffffff" }}
-          ></i>
-        </a>
-        <a href="https://wa.me/923490569480" target="_blank">
-          <i
-            className="social-icon fa-brands fa-whatsapp"
-            style={{ color: "#ffffff" }}
-          ></i>
-        </a>
+      ))}
       </div>
-
+      <div class="mySummary">
+        <div class="statBlock">
+          <div class="number">~6</div>
+          <div class="desc">YEARS OF EXPERIENCE</div>
+        </div>
+        <div class="statBlock">
+        <div class="number">8+</div>
+        <div class="desc">PROJECTS ON THE STORE</div>
+        </div>
+        <div class="statBlock">
+        <div class="number">50+</div>
+        <div class="desc">CLIENT PROJECTS COMPLETED</div>
+        </div>
+      </div>
     </div>
   );
 }
