@@ -9,25 +9,105 @@ a{
 
 .about{
   width: 100%;
-  height: 95vh;
+  height: 70vh;
   background-color: #9fd8ff;
   position: relative;
   .name{
     position: absolute;
-    top: 30%;
-    left:10%;
-    width: 500px;
+    top: 10%;
+    width: 100%;
+    text-align: center;
     font-size: xxx-large;
+    white-space: nowrap;
+    color: #EE4338;
+  }
+  .name2{
+    position: absolute;
+    top: 19%;
+    width: 100%;
+    text-align: center;
+    font-size: x-large;
     white-space: nowrap;
     color: #EE4338;
   }
   .links{
     position: absolute;
-    top:40%;
-    left: 10%;
-    width: 380px;
+    top:28%;
+    width: 100%;
+    padding-left: 30%;
+    padding-right: 30%;
     display: flex;
     justify-content: space-between
+  }
+  .skills{
+    position: absolute;
+    top:37%;
+    left: 5%;
+    .skillCategory{
+      margin-bottom: 10px;
+      color:#EE4338;
+      .categoryChip{
+        margin-left:10px;
+      
+        color: #ffffff;
+        font-weight: 600;
+      
+        width: fit-content;
+        height: 35px;
+        border-radius: 10px;
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color:#1861e7;
+      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        font-size: 1.25rem;
+      
+        .skillName{
+          margin-left: 5px;
+          font-size: small;
+        }
+        .unreal{
+          background: url("./assets/icons/unreal.svg") no-repeat center center;
+          width: 20px;
+          height: 20px;
+        }
+        .jira{
+          background: url("./assets/icons/jira.svg") no-repeat center center;
+          width: 20px;
+          height: 20px;
+        }
+        .firebase{
+          background: url("./assets/icons/firebase.svg") no-repeat center center;
+          width: 20px;
+          height: 20px;
+        }
+        .admob{
+          background: url("./assets/icons/admob.svg") no-repeat center center;
+          width: 20px;
+          height: 20px;
+        }
+        .photon{
+          background: url("./assets/icons/photon.svg") no-repeat center center;
+          width: 20px;
+          height: 20px;
+        }
+        .azure{
+          background: url("./assets/icons/azure.svg") no-repeat center center;
+          width: 20px;
+          height: 20px;
+        }
+        .games{
+          background: url("./assets/icons/games.svg") no-repeat center center;
+          width: 20px;
+          height: 20px;
+        }
+        }
+    }
   }
   .mySummary{
     display: flex;
@@ -45,6 +125,7 @@ a{
       margin: 1%;
       padding: 1%;
       border-radius: 10px;
+    }
     .number{
       font-weight: 800;
       text-align: center;
@@ -52,12 +133,19 @@ a{
     }
     .desc{
       font-weight: 400;
+      margin-left: 5px;
       font-size: medium;
+      text-align: center;
+      align-content: center;
       color: #db8882;
     }
-    }
+  }
+  .chipsList{
+    display: flex;
+    flex-direction: row;
   }
 }
+
 
 .myPic{
   position: absolute;

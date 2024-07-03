@@ -97,6 +97,35 @@ const socialLinks = [
   },
 ];
 
+const skills = [
+  {
+    category: "Game Engines",
+    chips: [
+      { name: "Unity3D", classname: "fa-brands fa-unity"},
+      { name: "Unreal Engine", classname: "unreal" }
+    ]
+  },
+  {
+    category: "Version Control & Management",
+    chips: [
+      { name: "GitHub", classname: "fa-brands fa-github" },
+      { name: "Jira", classname: "jira" },
+      { name: "Trello", classname: "fa-brands fa-trello" }
+    ]
+  },
+  {
+    category: "Frameworks",
+    chips: [
+      { name: "Firebase", classname: "firebase" },
+      { name: "AdMob", classname: "admob" },
+      { name: "Photon", classname: "photon" },
+      { name: "Azure PlayFab", classname: "azure" },
+      { name: "Play Store API", classname: "fa-brands fa-google-play" },
+      { name: "Play Games API", classname: "games" },
+    ]
+  }
+];
+
 const recommendations = [
   require("./assets/recs/rec1.png"),
   require("./assets/recs/rec2.png"),
@@ -130,6 +159,9 @@ function About() {
           <b>Abdullah</b> Asim
         </span>
       </div>
+      <div class="name2">
+        <b>Senior Game Developer</b>
+      </div>
       <div class="links">
       {socialLinks.map((social, index) => (
         <a href={social.link} target="_blank" rel="noopener noreferrer" key={index}>
@@ -137,19 +169,39 @@ function About() {
         </a>
       ))}
       </div>
+      <div class = "skills">
+        {skills.map((skillCategory,index)=>(
+          <div class="skillCategory">
+            {skillCategory.category}:
+            <div class="chipsList">
+            {
+              skillCategory.chips.map((skill, index)=>(
+                <span class = "categoryChip">
+                  <i className={skill.classname} style={{ color: "#ffffff" }}></i>
+                  <div class="skillName">
+                  {skill.name}
+                  </div>
+                </span>
+              )
+            )}
+            </div>
+          </div>
+        ))}
+      </div>
       <div class="mySummary">
         <div class="statBlock">
           <div class="number">~6</div>
           <div class="desc">YEARS OF EXPERIENCE</div>
         </div>
         <div class="statBlock">
+        <div class="number">30+</div>
+        <div class="desc">CLIENT PROJECTS COMPLETED</div>
+        </div>
+        <div class="statBlock">
         <div class="number">8+</div>
         <div class="desc">PROJECTS ON THE STORE</div>
         </div>
-        <div class="statBlock">
-        <div class="number">50+</div>
-        <div class="desc">CLIENT PROJECTS COMPLETED</div>
-        </div>
+
       </div>
     </div>
   );
