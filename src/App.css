@@ -10,7 +10,7 @@ a{
 .about{
   width: 100%;
   height: 70vh;
-  background-color: #9fd8ff;
+  background-color: #83cdff;
   position: relative;
   .name{
     position: absolute;
@@ -119,6 +119,11 @@ a{
           width: 20px;
           height: 20px;
         }
+        .blender{
+          background: url("./assets/icons/blender.svg") no-repeat center center;
+          width: 20px;
+          height: 20px;
+        }
         }
     }
   }
@@ -130,7 +135,7 @@ a{
     left: 1%;
     width: 58%;
     text-align: center;
-    color: #EE4338;
+    color: #1861e7;
     font-size: larger;
     .statBlock{
       display: flex;
@@ -145,12 +150,12 @@ a{
       height: 100%;
     }
     .desc{
-      font-weight: 400;
+      font-weight: 500;
       margin-left: 5px;
       font-size: medium;
       text-align: center;
       align-content: center;
-      color: #db8882;
+      color: #1861e7;
     }
   }
   .chipsList{
@@ -168,11 +173,55 @@ a{
 }
 }
 
+.projects{
+  padding: 24px;
+  background-color: #ff9a93;
+  
+  .projectsList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;    
+    
+    padding: 0px;
+    padding-inline-start: 0px;    
+    
+    .project{
+      margin: 20px;
+      font-size: larger;
+
+      padding: 0px;
+      padding-inline-start: 0px; 
+            
+      .projectThumbnail{
+        margin-left: -15px;
+        margin-right: -15px;
+        margin-top: -15px;
+        margin-bottom: 15px;
+        width: 400px;
+        border-radius: 15px;
+    }
+    .projectDescription{
+      color: #314874;
+      font-size: medium;
+      font-weight: 500;
+      line-height: 20px;
+      margin-top: 20px;
+    }
+    }
+  }
+}
+
 .experiences{
   padding: 24px;
-  background-color: #fff3f2;
+  background-color: #83cdff;
 }
 .sectionHeading{
+  width: 100%;
+  color: #1861e7; 
+}
+
+.sectionHeading2{
   width: 100%;
   color: #EE4338; 
 }
@@ -213,7 +262,7 @@ a{
 
 .recommendations{
   padding: 24px;
-  background-color: #cef8ff;
+  background-color: #ff9a93;
 }
 .recommendationsList{
   padding: 0px;
@@ -227,7 +276,7 @@ a{
   box-shadow: 0px 0px 4px 4px #0000003a;
 }
 .recommendation:hover{
-  box-shadow: 0px 0px 4px 4px #f0ae9e;
+  box-shadow: 0px 0px 4px 4px #9EE3F0;
 }
 
 .connect{

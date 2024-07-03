@@ -1,5 +1,6 @@
 import "./App.css";
 import React from "react";
+import { useState } from "react";
 import DrawerAppBar from "./DrawerAppBar";
 import { Card, Chip } from "@mui/material";
 
@@ -99,9 +100,10 @@ const socialLinks = [
 
 const skills = [
   {
-    category: "Game Engines",
+    category: "Tools",
     chips: [
       { name: "Unity3D", classname: "fa-brands fa-unity"},
+      { name: "Blender", classname: "blender"},
       { name: "Unreal Engine", classname: "unreal" }
     ]
   },
@@ -129,6 +131,28 @@ const skills = [
   }
 ];
 
+const projects = [
+  {
+    title: "Drift Racing Legends",
+    description: "Dive into the heart-pounding world of high-speed drifting with Drift Racing Legends! Buy, select and customize your favourite cars and race in beautifully crafted maps.",
+    thumbnail: require("./assets/projects/drift.png"),
+    trailer: require("./assets/projects/drift.mp4"),
+    link:"https://play.google.com/store/apps/details?id=com.MHFLStudios.DriftLegends&hl=fr"
+  },
+  {
+    title: "Fruit Slice",
+    description: "Drop to merge similar fruits into bigger ones and score in the puzzle, get a watermelon, relax, and keep collecting.",
+    thumbnail: require("./assets/projects/fruit1.jpg"),
+    link: "https://play.google.com/store/apps/details?id=com.MHFLStudios.FruitSlice&hl=en",
+  },
+  {
+    title: "Mega Merge Fruit",
+    description: "Connect and pop similar fruits to score big! Aim to merge the most fruits and achieve record-breaking scores. Collect pickups to extend your time or clear the board.",
+    thumbnail: require("./assets/projects/fruit2.jpg"),
+    link:"https://play.google.com/store/apps/details?id=com.MHFLStudios.StickyFruits&hl=en_US"
+  },
+]
+
 const recommendations = [
   require("./assets/recs/rec1.png"),
   require("./assets/recs/rec2.png"),
@@ -141,6 +165,7 @@ function App() {
     <div class="body">
       <DrawerAppBar />
       <About />
+      <Projects/>
       <Experiences />
       <Recommendations />
       <Connect />
@@ -194,17 +219,75 @@ function About() {
       <div class="mySummary">
         <div class="statBlock">
           <div class="number">~6</div>
-          <div class="desc">YEARS OF EXPERIENCE</div>
+          <div class="desc">Years of experience</div>
         </div>
         <div class="statBlock">
         <div class="number">30+</div>
-        <div class="desc">CLIENT PROJECTS COMPLETED</div>
+        <div class="desc">Client projects completed</div>
         </div>
         <div class="statBlock">
         <div class="number">8+</div>
-        <div class="desc">PROJECTS ON THE STORE</div>
+        <div class="desc">Projects on the store</div>
         </div>
 
+      </div>
+    </div>
+  );
+}
+
+function Projects(){
+  const [showThumbnail, setShowThumbnail] = useState(false);
+
+  const handleVideoEnd = () => {
+    setShowThumbnail(true);
+  };
+
+  return(
+    <div class="projects">
+      <center>
+        <h2 class="sectionHeading">FEATURED PROJECTS</h2> 
+      </center>
+      <div class="projectsList">
+        {
+          projects.map((project,index)=>(
+            <a class="project" href = {project.link} target="_blank">
+            <Card
+              sx={{
+                margin: "15px",
+                display: "flex",
+                flexDirection: 'column',
+                color: "#1861e7",
+                fontWeight: "700",
+
+                padding: "15px",
+                borderRadius: 4,
+                backgroundColor: "#FFFF",
+                width: "400px",
+
+                "&:hover": {
+                  boxShadow: "0px 0px 4px 4px #9EE3F0",
+                },
+              }}
+              elevation={5}>
+               {project.trailer && !showThumbnail ? (
+                <video controls = "controls" muted class="projectThumbnail" autoPlay onEnded={handleVideoEnd}>
+                  <source src={project.trailer} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                ):(
+                <img className="projectThumbnail" src={project.thumbnail} alt="Project Thumbnail" />
+                )
+              }    
+              {project.title}
+              <br></br>
+              <div class="projectDescription">
+              {project.description}
+              </div>
+            </Card>
+            </a>
+          )
+          )
+        }
       </div>
     </div>
   );
@@ -214,7 +297,7 @@ function Experiences() {
   return (
     <div class="experiences">
       <center>
-        <h2 class="sectionHeading">EXPERIENCES</h2>
+        <h2 class="sectionHeading2">EXPERIENCES</h2>
       </center>
       <div>
         <ul class="experiencesCardsList">
@@ -230,7 +313,7 @@ function Experiences() {
                 backgroundColor: "#FFFF",
                 maxWidth: "1000px",
                 "&:hover": {
-                  boxShadow: "0px 0px 4px 4px #9EE3F0",
+                  boxShadow: "0px 0px 4px 4px #f0ae9e",
                 },
               }}
               elevation={5}
