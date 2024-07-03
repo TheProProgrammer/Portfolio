@@ -151,7 +151,25 @@ const projects = [
     thumbnail: require("./assets/projects/fruit2.jpg"),
     link:"https://play.google.com/store/apps/details?id=com.MHFLStudios.StickyFruits&hl=en_US"
   },
-]
+  {
+    title: "Escubar",
+    description: "Swerve and hop through the platforms at speed to avoid falling into the void. Reach new lengths, score new highscores and compete against your friends.",
+    thumbnail: require("./assets/projects/escubar.png"),
+    link:"https://play.google.com/store/apps/details?id=com.theproprogrammer.Escubar&hl=en_US"
+  },
+];
+const connectLinks = [
+  {
+    link: "mailto:abdullah.asim.0807@gmail.com",
+    className: "fa-solid fa-envelope",
+    text:"abdullah.asim.0807@gmail.com"
+  },
+  {
+    link: "https://wa.me/923490569480",
+    className: "fa-solid fa-phone",
+    text:"+92-3490569480"
+  },
+];
 
 const recommendations = [
   require("./assets/recs/rec1.png"),
@@ -181,7 +199,6 @@ function App() {
 function About() {
   return (
     <div class="about">
-      <img src={require("./assets/me.png")} class="myPic" />
       <div class="name">
         <span>
           <b>Abdullah</b> Asim
@@ -196,6 +213,22 @@ function About() {
           <i className={`social-icon ${social.className}`} style={{ color: "#ffffff" }}></i>
         </a>
       ))}
+      </div>
+      <img src={require("./assets/me.png")} class="myPic" />
+      <div class="mySummary">
+        <div class="statBlock">
+          <div class="number">~6</div>
+          <div class="desc">Years of experience</div>
+        </div>
+        <div class="statBlock">
+        <div class="number">30+</div>
+        <div class="desc">Client projects completed</div>
+        </div>
+        <div class="statBlock">
+        <div class="number">8+</div>
+        <div class="desc">Projects on the store</div>
+        </div>
+
       </div>
       <div class = "skills">
         {skills.map((skillCategory,index)=>(
@@ -215,21 +248,6 @@ function About() {
             </div>
           </div>
         ))}
-      </div>
-      <div class="mySummary">
-        <div class="statBlock">
-          <div class="number">~6</div>
-          <div class="desc">Years of experience</div>
-        </div>
-        <div class="statBlock">
-        <div class="number">30+</div>
-        <div class="desc">Client projects completed</div>
-        </div>
-        <div class="statBlock">
-        <div class="number">8+</div>
-        <div class="desc">Projects on the store</div>
-        </div>
-
       </div>
     </div>
   );
@@ -308,8 +326,8 @@ function Experiences() {
                 borderRadius: 3,
                 marginBottom: "40px",
                 justifyContent: "center",
-                marginLeft: "10%",
-                marginRight: "10%",
+                marginLeft: "0px",
+                marginRight: "0px",
                 backgroundColor: "#FFFF",
                 maxWidth: "1000px",
                 "&:hover": {
@@ -380,8 +398,21 @@ function Connect() {
   return (
     <div class="connect">
       <center>
-        <h2 class="sectionHeading">LET'S CONNECT</h2>
+        <h2 class="sectionHeading2">LET'S CONNECT</h2>
       </center>
+      <div class="connectButtons">
+        {
+          connectLinks.map((link)=>(
+            <a class="connectButton" href={link.link} target="_blank">
+              <i className={`${link.className}`}></i>
+              <div class="buttonText">
+              {link.text}
+                </div>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          ))
+        }
+      </div>
     </div>
   );
 }

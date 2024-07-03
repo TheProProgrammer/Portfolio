@@ -14,7 +14,7 @@ a{
   position: relative;
   .name{
     position: absolute;
-    top: 10%;
+    top: 5%;
     width: 100%;
     text-align: center;
     font-size: xxx-large;
@@ -23,7 +23,7 @@ a{
   }
   .name2{
     position: absolute;
-    top: 19%;
+    top: 15%;
     width: 100%;
     text-align: center;
     font-size: x-large;
@@ -32,7 +32,7 @@ a{
   }
   .links{
     position: absolute;
-    top:30%;
+    top:28%;
     width: 400px;/*
     padding-left: 30%;
     padding-right: 30%;*/
@@ -135,7 +135,7 @@ a{
     left: 1%;
     width: 58%;
     text-align: center;
-    color: #1861e7;
+    color: #EE4338;
     font-size: larger;
     .statBlock{
       display: flex;
@@ -155,7 +155,7 @@ a{
       font-size: medium;
       text-align: center;
       align-content: center;
-      color: #1861e7;
+      color: #EE4338;
     }
   }
   .chipsList{
@@ -192,7 +192,7 @@ a{
 
       padding: 0px;
       padding-inline-start: 0px; 
-            
+
       .projectThumbnail{
         margin-left: -15px;
         margin-right: -15px;
@@ -265,15 +265,19 @@ a{
   background-color: #ff9a93;
 }
 .recommendationsList{
-  padding: 0px;
+  padding: ;
   text-align: center;
+  
+  align-items: center;
+  padding: 0px;
+  padding-inline-start: 0px;
 }
 .recommendation{
-  width: 90%;
+  width: 100%;
   max-width: 800px;
-  margin: 10px;
   border-radius: 10px;
   box-shadow: 0px 0px 4px 4px #0000003a;
+  margin-bottom: 10px;
 }
 .recommendation:hover{
   box-shadow: 0px 0px 4px 4px #9EE3F0;
@@ -281,7 +285,35 @@ a{
 
 .connect{
   padding: 24px;
-  background-color: #fff3f2;
+  background-color: #83cdff;
+  .connectButtons{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .connectButton{
+      flex-direction: row;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      color: #ffffff;
+      background-color: #1861e7;
+      width: fit-content;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: large; 
+      margin-bottom: 20px;
+
+      box-shadow: 0px 0px 4px 4px #0000003a;
+
+      .buttonText{
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+  }
 }
 
 .footer{
@@ -339,37 +371,50 @@ special{
 
 @media (max-width: 768px) {
   .about{
-    height: 110vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 1150px;
+    .myPic{
+      position: static;
+      height: 600px;
+      object-fit: contain;
+      margin-top: -20%;
+    }
     .name{
-      top: 5%;
+      position: static;
+      margin-top: 20px;
     }
     .name2{
-      top: 11%;
+      position: static;
     }
     .links{
-      top: 18%;
+      position: static;
+      width: 100%;
+      align-items: center;
+      padding: 20px;
+      justify-content: space-between;
+      transform: translate(0%, 0%);
     }
     .skills{
-      top:25%;
+      margin: 20px;
+      position: static;
       .chipsList{
-        width: 90%;
+        width: 100%;
       }
     }
-    .myPic{
-      position: absolute;
-      bottom: 7%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
     .mySummary{
-      width: 99%;
-      bottom: 0%;top: 93%;
+      position: static;
+      width: 100%;
+      margin-top: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
   }
   .experienceCardInside{
     display: flex;
     flex-direction:column;
-    margin: 10px;
   }
   .experienceCardDescription{
   width: 100%;
