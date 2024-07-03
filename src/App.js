@@ -122,6 +122,9 @@ const skills = [
       { name: "Azure PlayFab", classname: "azure" },
       { name: "Play Store API", classname: "fa-brands fa-google-play" },
       { name: "Play Games API", classname: "games" },
+      { name: "VR SDK", classname: "vr" },
+      { name: "AR SDK", classname: "ar" },
+
     ]
   }
 ];

@@ -32,10 +32,12 @@ a{
   }
   .links{
     position: absolute;
-    top:28%;
-    width: 100%;
+    top:30%;
+    width: 400px;/*
     padding-left: 30%;
-    padding-right: 30%;
+    padding-right: 30%;*/
+    left:50%;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: space-between
   }
@@ -48,6 +50,7 @@ a{
       color:#EE4338;
       .categoryChip{
         margin-left:10px;
+        margin-bottom: 10px;
       
         color: #ffffff;
         font-weight: 600;
@@ -106,6 +109,16 @@ a{
           width: 20px;
           height: 20px;
         }
+        .vr{
+          background: url("./assets/icons/vr.svg") no-repeat center center;
+          width: 20px;
+          height: 20px;
+        }
+        .ar{
+          background: url("./assets/icons/ar.svg") no-repeat center center;
+          width: 20px;
+          height: 20px;
+        }
         }
     }
   }
@@ -142,16 +155,17 @@ a{
   }
   .chipsList{
     display: flex;
+    flex-wrap: wrap;
+    width: 60vw;
     flex-direction: row;
   }
-}
-
-
+  
 .myPic{
   position: absolute;
   bottom: 0;
   right: 0;
   width: 400px;
+}
 }
 
 .experiences{
@@ -275,32 +289,52 @@ special{
 
 
 @media (max-width: 768px) {
+  .about{
+    height: 110vh;
+    .name{
+      top: 5%;
+    }
+    .name2{
+      top: 11%;
+    }
+    .links{
+      top: 18%;
+    }
+    .skills{
+      top:25%;
+      .chipsList{
+        width: 90%;
+      }
+    }
+    .myPic{
+      position: absolute;
+      bottom: 7%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .mySummary{
+      width: 99%;
+      bottom: 0%;top: 93%;
+    }
+  }
   .experienceCardInside{
     display: flex;
     flex-direction:column;
     margin: 10px;
   }
-.experienceCardDescription{
+  .experienceCardDescription{
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.experienceCardCompanySection{
+  }
+  .experienceCardCompanySection{
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
-}
-.myPic{
-  
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 400px;
-}
+  }
 }
 @media (max-width: 425px) {
   .experienceCardInside{
