@@ -119,14 +119,14 @@ const skills = [
     category: "Frameworks",
     chips: [
       { name: "Firebase", classname: "firebase" },
-      { name: "AdMob", classname: "admob" },
+      { name: "AdMob", classname: "admob" },     
+      { name: "Amazon Web Services", classname: "fa-brands fa-aws" },
       { name: "Photon", classname: "photon" },
       { name: "Azure PlayFab", classname: "azure" },
       { name: "Play Store API", classname: "fa-brands fa-google-play" },
       { name: "Play Games API", classname: "games" },
       { name: "VR SDK", classname: "vr" },
       { name: "AR SDK", classname: "ar" },
-
     ]
   }
 ];
@@ -181,7 +181,7 @@ const recommendations = [
 function App() {
   return (
     <div class="body">
-      <DrawerAppBar />
+      <DrawerAppBar/>
       <About />
       <Projects/>
       <Experiences />

@@ -16,7 +16,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 const drawerWidth = 240;
-const navItems = ['About', 'Tech', 'Projects', 'Experiences', 'Contact'];
+const navItems = [];
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -32,15 +32,6 @@ function DrawerAppBar(props) {
         Abdullah Asim
       </Typography>
       <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
     </Box>
   );
 
