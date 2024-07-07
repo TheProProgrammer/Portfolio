@@ -157,6 +157,12 @@ const projects = [
     thumbnail: require("./assets/projects/escubar.png"),
     link:"https://play.google.com/store/apps/details?id=com.theproprogrammer.Escubar&hl=en_US"
   },
+  {
+    title: "Anxiety Rewired",
+    description: "A story-mode simulation game with 6+ levels, properitary hardware integration, An AI assistant and detailed reporting.",
+    thumbnail: require("./assets/projects/confidential.jpg"),
+    link:"",
+  },
 ];
 const connectLinks = [
   {
