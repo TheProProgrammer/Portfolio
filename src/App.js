@@ -182,6 +182,7 @@ const recommendations = [
   require("./assets/recs/rec2.png"),
   require("./assets/recs/rec3.png"),
   require("./assets/recs/rec4.png"),
+  require("./assets/recs/rec5.png"),
 ];
 
 function App() {
