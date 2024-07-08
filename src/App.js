@@ -158,8 +158,8 @@ const projects = [
     link:"https://play.google.com/store/apps/details?id=com.theproprogrammer.Escubar&hl=en_US"
   },
   {
-    title: "Anxiety Rewired",
-    description: "A story-mode simulation game with 6+ levels, properitary hardware integration, An AI assistant and detailed reporting.",
+    title: <i>Undisclosed</i>,
+    description: "A story-mode simulation game with 6+ levels, proprietary hardware integration, An AI assistant and detailed reporting.",
     thumbnail: require("./assets/projects/confidential.jpg"),
     link:"",
   },
