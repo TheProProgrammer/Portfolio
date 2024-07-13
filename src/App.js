@@ -143,6 +143,7 @@ const projects = [
     title: "Fruit Slice",
     description: "Drop to merge similar fruits into bigger ones and score in the puzzle, get a watermelon, relax, and keep collecting.",
     thumbnail: require("./assets/projects/fruit1.jpg"),
+    trailer:require("./assets/projects/fruit1.mp4"),
     link: "https://play.google.com/store/apps/details?id=com.MHFLStudios.FruitSlice&hl=en",
   },
   {
