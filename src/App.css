@@ -39,7 +39,8 @@ a{
     left:50%;
     transform: translate(-50%, -50%);
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    z-index: 1;
   }
   .skills{
     position: absolute;
