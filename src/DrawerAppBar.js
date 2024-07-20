@@ -16,7 +16,6 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 const drawerWidth = 240;
-const navItems = [];
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -36,6 +35,16 @@ function DrawerAppBar(props) {
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
+
+  const onButtonClick = () => {
+    const pdfUrl = "Resume.pdf";
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "Abdullah Asim Game Developer Resume.pdf"; // specify the filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -61,15 +70,9 @@ function DrawerAppBar(props) {
       </Box>
     </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={
-                {fontWeight:'bold', color:"#EE4338", fontFamily:"Ubuntu", '&:hover': {
-          backgroundColor: '#9EE3F0', // Hover background color
-        }}}
-                >
-                {item}
+              <Button onClick={onButtonClick} key="Download Resume" sx={
+                {fontWeight:'bold', color:"#EE4338", fontFamily:"Ubuntu", '&:hover': {backgroundColor: '#9EE3F0',}}}>Download Resume
               </Button>
-            ))}
           </Box>
         </Toolbar>
       </AppBar>
@@ -98,5 +101,4 @@ function DrawerAppBar(props) {
 DrawerAppBar.propTypes = {
   window: PropTypes.func,
 };
-
 export default DrawerAppBar;
