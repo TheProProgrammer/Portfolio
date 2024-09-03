@@ -153,6 +153,12 @@ const projects = [
     link:"https://play.google.com/store/apps/details?id=com.MHFLStudios.StickyFruits&hl=en_US"
   },
   {
+    title: "Shape Blast | Number Game",
+    description: "Use logic and gravity to figure out and shoot down shapes before they reach the top!",
+    thumbnail: require("./assets/projects/numbergame.jpg"),
+    link:"https://play.google.com/store/apps/details?id=com.MHFLStudios.NumberGame&hl=en_US"
+  },
+  {
     title: "Escubar",
     description: "Swerve and hop through the platforms at speed to avoid falling into the void. Reach new lengths, score new highscores and compete against your friends.",
     thumbnail: require("./assets/projects/escubar.png"),
