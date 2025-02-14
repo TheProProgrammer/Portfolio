@@ -1,8 +1,7 @@
 import "./App.css";
 import React from "react";
-import { useState } from "react";
-import DrawerAppBar from "./DrawerAppBar";
 import { Card, Chip } from "@mui/material";
+import { useState, useRef, useEffect } from "react";
 
 const experiences = [
   {
@@ -98,12 +97,27 @@ const socialLinks = [
   },
 ];
 
+const stats = [
+  {
+    amount: "6+",
+    description: "Years of Experience",
+  },
+  {
+    amount: "30+",
+    description: "Client Projects Completed",
+  },
+  {
+    amount: "8+",
+    description: "Projects on the store",
+  },
+]
+
 const skills = [
   {
     category: "Tools",
     chips: [
-      { name: "Unity3D", classname: "fa-brands fa-unity"},
-      { name: "Blender", classname: "blender"},
+      { name: "Unity3D", classname: "fa-brands fa-unity" },
+      { name: "Blender", classname: "blender" },
       { name: "Unreal Engine", classname: "unreal" }
     ]
   },
@@ -119,7 +133,7 @@ const skills = [
     category: "Frameworks",
     chips: [
       { name: "Firebase", classname: "firebase" },
-      { name: "AdMob", classname: "admob" },     
+      { name: "AdMob", classname: "admob" },
       { name: "Amazon Web Services", classname: "fa-brands fa-aws" },
       { name: "Photon", classname: "photon" },
       { name: "Azure PlayFab", classname: "azure" },
@@ -133,54 +147,62 @@ const skills = [
 
 const projects = [
   {
+    title: "Meta Frontier",
+    description: "A tower defense blockchain game ⚔️ Gather your allies and destroy the enemy tower",
+    thumbnail: require("./assets/projects/metafrontier.jpg"),
+    trailer: require("./assets/projects/metafrontier.mp4"),
+    link: "https://x.com/xmeta_frontier"
+  },
+  {
     title: "Drift Racing Legends",
-    description: "Dive into the heart-pounding world of high-speed drifting with Drift Racing Legends! Buy, select and customize your favourite cars and race in beautifully crafted maps.",
+    description: "Dive into the world of high-speed drifting! Buy and customize your favourite cars and race in beautiful maps.",
     thumbnail: require("./assets/projects/drift.png"),
     trailer: require("./assets/projects/drift.mp4"),
-    link:"https://play.google.com/store/apps/details?id=com.MHFLStudios.DriftLegends&hl=fr"
+    link: "https://play.google.com/store/apps/details?id=com.MHFLStudios.DriftLegends&hl=fr"
   },
   {
     title: "Fruit Slice",
     description: "Drop to merge similar fruits into bigger ones and score in the puzzle, get a watermelon, relax, and keep collecting.",
     thumbnail: require("./assets/projects/fruit1.jpg"),
-    trailer:require("./assets/projects/fruit1.mp4"),
+    trailer: require("./assets/projects/fruit1.mp4"),
     link: "https://play.google.com/store/apps/details?id=com.MHFLStudios.FruitSlice&hl=en",
   },
   {
     title: "Mega Merge Fruit",
-    description: "Connect and pop similar fruits to score big! Aim to merge the most fruits and achieve record-breaking scores. Collect pickups to extend your time or clear the board.",
+    description: "Connect and pop similar fruits to score big! Aim to merge the most fruits and achieve record-breaking scores.",
     thumbnail: require("./assets/projects/fruit2.jpg"),
-    link:"https://play.google.com/store/apps/details?id=com.MHFLStudios.StickyFruits&hl=en_US"
+    link: "https://play.google.com/store/apps/details?id=com.MHFLStudios.StickyFruits&hl=en_US"
   },
   {
     title: "Shape Blast | Number Game",
     description: "Use logic and gravity to figure out and shoot down shapes before they reach the top!",
     thumbnail: require("./assets/projects/numbergame.jpg"),
-    link:"https://play.google.com/store/apps/details?id=com.MHFLStudios.NumberGame&hl=en_US"
+    link: "https://play.google.com/store/apps/details?id=com.MHFLStudios.NumberGame&hl=en_US"
   },
   {
     title: "Escubar",
-    description: "Swerve and hop through the platforms at speed to avoid falling into the void. Reach new lengths, score new highscores and compete against your friends.",
+    description: "Swerve and hop through the platforms to avoid falling into the void. Set new highscores and compete against friends.",
     thumbnail: require("./assets/projects/escubar.png"),
-    link:"https://play.google.com/store/apps/details?id=com.theproprogrammer.Escubar&hl=en_US"
+    link: "https://play.google.com/store/apps/details?id=com.theproprogrammer.Escubar&hl=en_US"
   },
   {
     title: <i>Undisclosed</i>,
     description: "A story-mode simulation game with 6+ levels, proprietary hardware integration, An AI assistant and detailed reporting.",
     thumbnail: require("./assets/projects/confidential.jpg"),
-    link:"",
+    link: "",
   },
 ];
+
 const connectLinks = [
   {
     link: "mailto:abdullah.asim.0807@gmail.com",
     className: "fa-solid fa-envelope",
-    text:"abdullah.asim.0807@gmail.com"
+    text: "abdullah.asim.0807@gmail.com"
   },
   {
     link: "https://wa.me/923490569480",
     className: "fa-solid fa-phone",
-    text:"+92-3490569480"
+    text: "+92-3490569480"
   },
 ];
 
@@ -194,244 +216,248 @@ const recommendations = [
 
 function App() {
   return (
-    <div class="body">
-      <DrawerAppBar/>
-      <About />
-      <Projects/>
-      <Experiences />
-      <Recommendations />
-      <Connect />
-      <footer class="footer">
-        <span>
-          Designed and Developed in ReactJS by <special> Abdullah Asim</special>
-        </span>
-      </footer>
-    </div>
-  );
-}
-
-function About() {
-  return (
-    <div class="about">
-      <div class="name">
-        <span>
-          <b>Abdullah</b> Asim
-        </span>
+    <div className="body">
+      <div className="left-section">
+        <Card
+          sx={{
+            margin: "1vh",
+            display: "flex",
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            color: "white",
+            padding: "1.5vh",
+            borderRadius: 4,
+            backgroundColor: "#2A2B2C",
+            width: "80%",
+            "&:hover": {
+              boxShadow: "0px 0px 4px 4px rgb(0,123,255)",
+            },
+          }}
+          elevation={5}>
+          <img src={require('./assets/me.jpg')} alt="Abdullah Asim" style={{ width: "80%", borderRadius: "15px", margin: "2vw" }} />
+          <div class="name">Abdullah Asim</div>
+          <div class="name j">(アブドラ・アシム)</div>
+          <div class="occupation">Game Developer | Software Engineer</div>
+          <span style={{ marginTop: "1vh" }}>
+            {socialLinks.map((social, index) => (
+              <a key={index} href={social.link} target="_blank" rel="noopener noreferrer">
+                <i className={social.className} style={{ fontSize: "1vw", color: "#aaaaaa", margin: "0.4vw" }}></i>
+              </a>
+            ))}
+          </span>
+          <button className="button">Let's Connect</button>
+        </Card>
       </div>
-      <div class="name2">
-        <b>Senior Game Developer</b>
-      </div>
-      <div class="links">
-      {socialLinks.map((social, index) => (
-        <a href={social.link} target="_blank" rel="noopener noreferrer" key={index}>
-          <i className={`social-icon ${social.className}`} style={{ color: "#ffffff" }}></i>
-        </a>
-      ))}
-      </div>
-      <img src={require("./assets/me.png")} class="myPic" />
-      <div class="mySummary">
-        <div class="statBlock">
-          <div class="number">~6</div>
-          <div class="desc">Years of experience</div>
-        </div>
-        <div class="statBlock">
-        <div class="number">30+</div>
-        <div class="desc">Client projects completed</div>
-        </div>
-        <div class="statBlock">
-        <div class="number">8+</div>
-        <div class="desc">Projects on the store</div>
-        </div>
-
-      </div>
-      <div class = "skills">
-        {skills.map((skillCategory,index)=>(
-          <div class="skillCategory">
-            {skillCategory.category}:
-            <div class="chipsList">
-            {
-              skillCategory.chips.map((skill, index)=>(
-                <span class = "categoryChip">
-                  <i className={skill.classname} style={{ color: "#ffffff" }}></i>
-                  <div class="skillName">
-                  {skill.name}
-                  </div>
-                </span>
-              )
-            )}
-            </div>
+      <div className="right-section">
+        <div className="intro">
+          <div className="title">
+            Bringing <span className="highlight">stories</span> to <span className="highlight">life</span>, one line of <span className="highlight">code</span> at a time
           </div>
-        ))}
+          <div className="subtitle">
+            An experienced Game Developer and Software Engineer with an unending passion to craft the next big thing.
+          </div>
+          <div className="stats">
+            {stats.map((stat, index) => (
+              <div key={index} className="stat">
+                <div className="amount">{stat.amount}</div>
+                <div className="description">{stat.description}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="projects">
+          <div className="title">
+            Recent <span className="highlight">Projects</span>:
+            <ProjectGrid />
+          </div>
+        </div>
+        <div class="skills">
+          {skills.map((skillCategory, index) => (
+            <div class="skillCategory">
+              {skillCategory.category}:
+              <div class="chipsList">
+                {
+                  skillCategory.chips.map((skill, index) => (
+                    <span class="categoryChip">
+                      <i className={skill.classname} style={{ color: "#ffffff" }}></i>
+                      <div class="skillName">
+                        {skill.name}
+                      </div>
+                    </span>
+                  )
+                  )}
+              </div>
+            </div>
+          ))}
+        </div>
+        <ImageCarousel />
       </div>
     </div>
   );
 }
+function ProjectCard({ project }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const videoRef = useRef(null); // Reference to video element
 
-function Projects(){
-  const [showThumbnail, setShowThumbnail] = useState(false);
-
-  const handleVideoEnd = () => {
-    setShowThumbnail(true);
+  const handleCardClick = () => {
+    if (project.link) {
+      window.open(project.link, '_blank');
+    }
   };
 
-  return(
-    <div class="projects">
-      <center>
-        <h2 class="sectionHeading">FEATURED PROJECTS</h2> 
-      </center>
-      <div class="projectsList">
-        {
-          projects.map((project,index)=>(
-            <a class="project" href = {project.link} target="_blank">
-            <Card
-              sx={{
-                margin: "15px",
-                display: "flex",
-                flexDirection: 'column',
-                color: "#1861e7",
-                fontWeight: "700",
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting); // Check if video is in view
+      },
+      { threshold: 1.0 } // Trigger only when 100% visible
+    );
 
-                padding: "15px",
-                borderRadius: 4,
-                backgroundColor: "#FFFF",
-                width: "400px",
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
 
-                "&:hover": {
-                  boxShadow: "0px 0px 4px 4px #9EE3F0",
-                },
-              }}
-              elevation={5}>
-               {project.trailer && !showThumbnail ? (
-                <video controls = "controls" muted class="projectThumbnail" autoPlay onEnded={handleVideoEnd}>
-                  <source src={project.trailer} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                ):(
-                <img className="projectThumbnail" src={project.thumbnail} alt="Project Thumbnail" />
-                )
-              }    
-              {project.title}
-              <br></br>
-              <div class="projectDescription">
-              {project.description}
-              </div>
-            </Card>
-            </a>
-          )
-          )
-        }
-      </div>
-    </div>
-  );
-}
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, []);
 
-function Experiences() {
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isVisible) {
+        videoRef.current.play(); // Play when in full view
+      } else {
+        videoRef.current.pause(); // Pause when out of view
+      }
+    }
+  }, [isVisible]);
+
   return (
-    <div class="experiences">
-      <center>
-        <h2 class="sectionHeading2">EXPERIENCES</h2>
-      </center>
-      <div>
-        <ul class="experiencesCardsList">
-          {experiences.map((item) => (
-            <Card
-              sx={{
-                padding: "20px",
-                borderRadius: 3,
-                marginBottom: "40px",
-                justifyContent: "center",
-                marginLeft: "0px",
-                marginRight: "0px",
-                backgroundColor: "#FFFF",
-                maxWidth: "1000px",
-                "&:hover": {
-                  boxShadow: "0px 0px 4px 4px #f0ae9e",
-                },
-              }}
-              elevation={5}
-            >
-              <div class="experienceCardInside">
-                <div class="experienceCardCompanySection">
-                  <div style={{ textAlign: "center" }}>
-                    <img
-                      class="experienceCardCompanyLogo"
-                      src={item.image}
-                      alt="icon"
-                    />
-                    <h2 style={{ fontWeight: "bold", color: "#37A4DC" }}>
-                      {item.company}
-                    </h2>
-                    <h5 style={{ color: "#909090" }}>{item.position}</h5>
-                    <h6 style={{ color: "#ABABAB", marginTop: "-20px" }}>
-                      {item.duration}
-                    </h6>
-                    <ul style={{ padding: "0px" }}>
-                      {item.toolsAndTech.map((item) => (
-                        <Chip
-                          label={item}
-                          style={{ margin: "5px", backgroundColor: "#9EE3F0" }}
-                        />
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div class="experienceCardDescription">
-                  <ul style={{ listStyleType: "disc", padding: "30px" }}>
-                    {item.description.map((item1) => (
-                      <BoldListItem item={item1} />
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </ul>
+    <div
+      onClick={handleCardClick}
+      style={{
+        width: "18vw",
+        cursor: "pointer",
+        textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: "1vw",
+        overflow: "hidden",
+        backgroundColor: "#2A2B2C",
+        transition: "transform 0.3s",
+      }}
+      className="project-card"
+    >
+      {project.trailer ? (
+        <video
+          ref={videoRef}
+          width="100%"
+          height="100%"
+          muted
+          loop={false}
+          controls
+        >
+          <source src={project.trailer} type="video/mp4" />
+        </video>
+      ) : (
+        <img
+          src={project.thumbnail}
+          alt={project.title}
+          style={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "1vw",
+            objectFit: "scale-down",
+          }}
+        />
+      )}
+
+      <div className="projectDetails">
+        <div
+          style={{
+            fontSize: "1vw",
+            marginTop: "0.25vh",
+            lineHeight: "2vh",
+            width: "100%",
+            textAlign: "left",
+          }}
+        >
+          {project.title}
+        </div>
+        <p
+          style={{
+            fontSize: "0.8vw",
+            color: "#aaaaaa",
+            marginTop: "1.25vh",
+            lineHeight: "2vh",
+            textAlign: "left",
+          }}
+        >
+          {project.description}
+        </p>
       </div>
     </div>
   );
 }
-
-function Recommendations() {
+function ProjectGrid() {
   return (
-    <div class="recommendations">
-      <center>
-        <h2 class="sectionHeading">RECOMMENDATIONS</h2>
-      </center>
-      <div>
-        <ul class="recommendationsList">
-          {recommendations.map((item) => (
-            <img class="recommendation" src={item} alt="recommendation" />
-          ))}
-        </ul>
-      </div>
+    <div
+      style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(15vw, 1fr))',
+        gap: '1vw',
+        paddingTop: '3vh',
+        justifyItems: 'center',
+        height: '100%',
+      }}
+    >
+      {projects.map((project, index) => (
+        <ProjectCard key={index} project={project} />
+      ))}
     </div>
   );
 }
+function ImageCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-function Connect() {
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % recommendations.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? recommendations.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
-    <div class="connect">
-      <center>
-        <h2 class="sectionHeading2">LET'S CONNECT</h2>
-      </center>
-      <div class="connectButtons">
-        {
-          connectLinks.map((link)=>(
-            <a class="connectButton" href={link.link} target="_blank">
-              <i className={`${link.className}`}></i>
-              <div class="buttonText">
-              {link.text}
-                </div>
-              <i class="fa-solid fa-chevron-right"></i>
-            </a>
-          ))
-        }
+
+    <div className="recommendations">
+      <div className="title">
+        Recommendations:
+      </div>
+      <div className="carousel">
+
+        <div className="carouselControls">
+          <button onClick={prevImage} className="cbutton" >
+            {"<"}
+          </button>
+          <button onClick={nextImage} className="cbutton">
+            {">"}
+          </button>
+        </div>
+        <img className="image"
+          src={recommendations[currentIndex]}
+          alt={`Recommendation ${currentIndex + 1}`}
+          style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+        />
       </div>
     </div>
   );
 }
-
-const BoldListItem = ({ item }) => {
-  return <li dangerouslySetInnerHTML={{ __html: item }}></li>;
-};
 export default App;

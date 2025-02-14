@@ -1,437 +1,275 @@
-a{
-  text-decoration: none;
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/Montserrat.ttf') format('truetype');
+  font-weight: 100 700;
+  font-style: normal;
 }
 
-.body{
-  /*padding: 8px;*/
-  font-family: Ubuntu;
+.body {
+  font-family: 'Montserrat', sans-serif;
+  padding-left: 20%;
+  padding-right: 20%;
+  align-items: horizontal;
+  background-color: #101112;
+  display: flex;
+  flex-direction: row;
+  height: 740vh;
 }
 
-.about{
-  width: 100%;
-  height: 70vh;
-  background-color: #83cdff;
-  position: relative;
-  .name{
-    position: absolute;
-    top: 5%;
+.left-section {
+  width: 33%;
+  font-weight: 800;
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .name {
+    font-size: 2vw;
+    font-weight: bold;
     width: 100%;
     text-align: center;
-    font-size: xxx-large;
+    letter-spacing: -0.15vw;
     white-space: nowrap;
-    color: #EE4338;
+    overflow: hidden;
   }
-  .name2{
-    position: absolute;
-    top: 15%;
-    width: 100%;
+
+  .j {
+    font-size: medium;
+    font-weight: 500;
+  }
+
+  .occupation {
+    font-size: 0.8vw;
+    font-weight: 500;
+    margin-top: 3vh;
     text-align: center;
-    font-size: x-large;
-    white-space: nowrap;
-    color: #EE4338;
+    color: #aaaaaa;
   }
-  .links{
-    position: absolute;
-    top:28%;
-    width: 400px;/*
-    padding-left: 30%;
-    padding-right: 30%;*/
-    left:50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: space-between;
-    z-index: 1;
-  }
-  .skills{
-    position: absolute;
-    top:37%;
-    left: 5%;
-    .skillCategory{
-      margin-bottom: 10px;
-      color:#EE4338;
-      .categoryChip{
-        margin-left:10px;
-        margin-bottom: 10px;
-      
-        color: #ffffff;
-        font-weight: 600;
-      
-        width: fit-content;
-        height: 35px;
-        border-radius: 10px;
-        text-align: center;
-        padding-left: 10px;
-        padding-right: 10px;
-        background-color:#1861e7;
-      
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
-
-        font-size: 1.25rem;
-      
-        .skillName{
-          margin-left: 5px;
-          font-size: small;
-        }
-        .unreal{
-          background: url("./assets/icons/unreal.svg") no-repeat center center;
-          width: 20px;
-          height: 20px;
-        }
-        .jira{
-          background: url("./assets/icons/jira.svg") no-repeat center center;
-          width: 20px;
-          height: 20px;
-        }
-        .firebase{
-          background: url("./assets/icons/firebase.svg") no-repeat center center;
-          width: 20px;
-          height: 20px;
-        }
-        .admob{
-          background: url("./assets/icons/admob.svg") no-repeat center center;
-          width: 20px;
-          height: 20px;
-        }
-        .photon{
-          background: url("./assets/icons/photon.svg") no-repeat center center;
-          width: 20px;
-          height: 20px;
-        }
-        .azure{
-          background: url("./assets/icons/azure.svg") no-repeat center center;
-          width: 20px;
-          height: 20px;
-        }
-        .games{
-          background: url("./assets/icons/games.svg") no-repeat center center;
-          width: 20px;
-          height: 20px;
-        }
-        .vr{
-          background: url("./assets/icons/vr.svg") no-repeat center center;
-          width: 20px;
-          height: 20px;
-        }
-        .ar{
-          background: url("./assets/icons/ar.svg") no-repeat center center;
-          width: 20px;
-          height: 20px;
-        }
-        .blender{
-          background: url("./assets/icons/blender.svg") no-repeat center center;
-          width: 20px;
-          height: 20px;
-        }
-        }
-    }
-  }
-  .mySummary{
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    top:85%;
-    left: 1%;
-    width: 58%;
-    text-align: center;
-    color: #EE4338;
-    font-size: larger;
-    .statBlock{
-      display: flex;
-      flex-direction: row;
-      margin: 1%;
-      padding: 1%;
-      border-radius: 10px;
-    }
-    .number{
-      font-weight: 800;
-      text-align: center;
-      height: 100%;
-    }
-    .desc{
-      font-weight: 500;
-      margin-left: 5px;
-      font-size: medium;
-      text-align: center;
-      align-content: center;
-      color: #EE4338;
-    }
-  }
-  .chipsList{
-    display: flex;
-    flex-wrap: wrap;
-    width: 60vw;
-    flex-direction: row;
-  }
-  
-.myPic{
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 400px;
-}
-}
-
-.projects{
-  padding: 24px;
-  background-color: #ff9a93;
-  
-  .projectsList{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;    
-    
-    padding: 0px;
-    padding-inline-start: 0px;    
-    
-    .project{
-      margin: 20px;
-      font-size: larger;
-
-      padding: 0px;
-      padding-inline-start: 0px; 
-
-      .projectThumbnail{
-        margin-left: -15px;
-        margin-right: -15px;
-        margin-top: -15px;
-        margin-bottom: 15px;
-        width: 400px;
-        border-radius: 15px;
-    }
-    .projectDescription{
-      color: #314874;
-      font-size: medium;
-      font-weight: 500;
-      line-height: 20px;
-      margin-top: 20px;
-    }
-    }
+  .button {
+    background-color: rgb(0, 123, 255);
+    color: #ffffff;
+    border: none;
+    margin: 2vh;
+    margin-top: 3vh;
+    width: 15vw;
+    padding: 1vh 2vh;
+    font-weight: 600;
+    font-family: Montserrat;
+    border-radius: 5px;
+    cursor: "pointer";
+    font-size: 2vh;
   }
 }
 
-.experiences{
-  padding: 24px;
-  background-color: #83cdff;
-}
-.sectionHeading{
-  width: 100%;
-  color: #1861e7; 
-}
+.right-section {
+  width: 66%;
+  padding-left: 40px;
 
-.sectionHeading2{
-  width: 100%;
-  color: #EE4338; 
-}
-.experiencesCardsList{
-  align-items: center;
-  padding: 0px;
-  padding-inline-start: 0px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.experienceCardInside{
-  display: flex;
-  flex-direction:center;
-  margin: 10px;
-}
-.experienceCardCompanyLogo{
-  width: 100px;
-  border-radius: 50%;
-  border-width: 3;
-  overflow: hidden;
-  border-color: red;
-}
-.experienceCardDescription{
-  width: 60%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.experienceCardCompanySection{
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.recommendations{
-  padding-top: 24px;
-  background-color: #ff9a93;
-}
-.recommendationsList{
-  text-align: center;
-  align-items: center;
-  padding: 0px;
-  padding-inline-start: 0px;
-}
-.recommendation{
-  width: 90%;
-  object-fit: contain;
-  max-width: 800px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 4px 4px #0000003a;
-  margin: 10px;
-}
-.recommendation:hover{
-  box-shadow: 0px 0px 4px 4px #9EE3F0;
-}
-
-.connect{
-  padding-top: 24px;
-  background-color: #83cdff;
-  .connectButtons{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    .connectButton{
-      flex-direction: row;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-
-      color: #ffffff;
-      background-color: #1861e7;
-      width: fit-content;
-      padding: 15px;
-      border-radius: 10px;
-      font-size: large; 
-      margin: 20px;
-
-      box-shadow: 0px 0px 4px 4px #0000003a;
-
-      .buttonText{
-        margin-left: 20px;
-        margin-right: 20px;
-      }
-    }
-  }
-}
-
-.footer{
-  height: 50px;
-  background-color: #303030;
-  text-align: center;
-  color: #ffffff;
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-special{
-  color: #EE4338;
-}
-.social-icon{
-  transition-property: all;
-  transition-duration: 200ms;
-  
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  text-align: center;
-  padding: 0;
-  background-color:#1861e7;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.25rem;
-
-  -webkit-border-radius: 20px;
- -moz-border-radius: 20px;
- border-radius: 20px;
- -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 5px;
- -moz-box-shadow: rgba(0,0,0,0.8) 0 0 5px;
- box-shadow: rgba(0,0,0,0.8) 0 0 5px;
-}
-.social-icon:hover{
-  transition-property: all;
-  transition-duration: 200ms;
-  width: 45px;
-  height: 45px;
-
-  font-size: 1.5rem;
-
-  -webkit-border-radius: 20px;
- -moz-border-radius: 20px;
- border-radius: 20px;
- -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
- -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
- box-shadow: rgba(0,0,0,0.8) 0 0 10px;
-}
-
-
-@media (max-width: 768px) {
-  .about{
-    justify-content: center;
-    align-items: center;
+  .intro {
+    height: 100vh;
+    margin-bottom: -15vh;
     display: flex;
     flex-direction: column;
-    height: 1150px;
-    .myPic{
-      position: static;
-      height: 600px;
-      object-fit: contain;
-      margin-top: -20%;
-    }
-    .name{
-      position: static;
-      margin-top: 20px;
-    }
-    .name2{
-      position: static;
-    }
-    .links{
-      position: static;
-      width: 100%;
-      align-items: center;
-      padding: 20px;
-      justify-content: space-between;
-      transform: translate(0%, 0%);
-    }
-    .skills{
-      margin: 20px;
-      position: static;
-      .chipsList{
-        width: 100%;
+    justify-content: center;
+
+    .title {
+      font-size: 8vh;
+      font-weight: 600;
+      line-height: 8vh;
+      margin-bottom: 1vw;
+      color: #ffffff;
+
+      .highlight {
+        color: rgb(0, 123, 255);
       }
     }
-    .mySummary{
-      position: static;
-      width: 100%;
-      margin-top: 20px;
-      padding-left: 20px;
-      padding-right: 20px;
+
+    .subtitle {
+      font-size: 2.5vh;
+      font-weight: 500;
+      margin-bottom: 1vw;
+      color: #aaaaaa;
+    }
+
+    .stats {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .stat {
+        .amount {
+          font-size: 70px;
+          font-weight: 600;
+          color: #ffffff;
+        }
+
+        .description {
+          text-transform: uppercase;
+          color: #aaaaaa;
+        }
+      }
     }
   }
-  .experienceCardInside{
-    display: flex;
-    flex-direction:column;
+
+  .projects {
+    .title {
+      font-size: 7vh;
+      font-weight: 600;
+      line-height: 8vh;
+      margin-bottom: 1vw;
+      color: #ffffff;
+
+      .highlight {
+        color: rgb(0, 123, 255);
+      }
+    }
+
+    .projectDetails {
+      margin: 1vw;
+    }
   }
-  .experienceCardDescription{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  }
-  .experienceCardCompanySection{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  white-space: nowrap;
+
+  .recommendations {
+    margin-top: 8vh;
+
+    .title {
+      font-size: 7vh;
+      font-weight: 600;
+      line-height: 8vh;
+      margin-bottom: 1vw;
+      color: #ffffff;
+    }
+
+    .carousel {
+      display: flex;
+      flex-direction: column;
+
+      .carouselControls {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        margin-bottom: 1vw;
+
+        .cbutton {
+          background-color: rgb(0, 123, 255);
+          border: none;
+          border-radius: 50%;
+          color: white;
+          font-size: 1.5vw;
+          margin: 0.25vw;
+        }
+      }
+    }
   }
 }
-@media (max-width: 425px) {
-  .experienceCardInside{
-    font-size: 3vw;
+
+.skills {
+  margin-top: 8vh;
+  width: 100%;
+
+  .skillCategory {
+    font-size: 3vh;
+    font-weight: 600;
+    line-height: 5vh;
+    color: #ffffff;
+
+    .chipsList {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .categoryChip {
+      margin-left: 10px;
+      margin-bottom: 10px;
+
+      color: #ffffff;
+      font-weight: 600;
+
+      width: fit-content;
+      height: 35px;
+      border-radius: 10px;
+      text-align: center;
+      padding-left: 10px;
+      padding-right: 10px;
+      background-color: #1861e7;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+      font-size: 1.25rem;
+
+      .skillName {
+        margin-left: 5px;
+        font-size: small;
+      }
+
+      .unreal {
+        background: url("./assets/icons/unreal.svg") no-repeat center center;
+        width: 20px;
+        height: 20px;
+      }
+
+      .jira {
+        background: url("./assets/icons/jira.svg") no-repeat center center;
+        width: 20px;
+        height: 20px;
+      }
+
+      .firebase {
+        background: url("./assets/icons/firebase.svg") no-repeat center center;
+        width: 20px;
+        height: 20px;
+      }
+
+      .admob {
+        background: url("./assets/icons/admob.svg") no-repeat center center;
+        width: 20px;
+        height: 20px;
+      }
+
+      .photon {
+        background: url("./assets/icons/photon.svg") no-repeat center center;
+        width: 20px;
+        height: 20px;
+      }
+
+      .azure {
+        background: url("./assets/icons/azure.svg") no-repeat center center;
+        width: 20px;
+        height: 20px;
+      }
+
+      .games {
+        background: url("./assets/icons/games.svg") no-repeat center center;
+        width: 20px;
+        height: 20px;
+      }
+
+      .vr {
+        background: url("./assets/icons/vr.svg") no-repeat center center;
+        width: 20px;
+        height: 20px;
+      }
+
+      .ar {
+        background: url("./assets/icons/ar.svg") no-repeat center center;
+        width: 20px;
+        height: 20px;
+      }
+
+      .blender {
+        background: url("./assets/icons/blender.svg") no-repeat center center;
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 }
