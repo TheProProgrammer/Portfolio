@@ -467,7 +467,6 @@ function ProjectCard({ project }) {
         backgroundColor: "#2A2B2C",
         transition: "transform 0.3s",
       }}
-      className="project-card"
     >
       {project.trailer ? (
         <video
