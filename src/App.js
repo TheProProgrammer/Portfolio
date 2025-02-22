@@ -5,6 +5,14 @@ import { useState, useRef, useEffect } from "react";
 
 const experiences = [
   {
+    company: "Hayaland Inc.",
+    position: "Game Developer",
+    toolsAndTech: ["Unity 3D"],
+    image: require("./assets/hayaland.jpeg"),
+    duration: "September 2024 - Current",
+    description: [],
+  },
+  {
     company: "Texinity Pvt. Ltd.",
     position: "Contractual Game Developer",
     toolsAndTech: ["Unity 3D", "Blender"],
@@ -23,7 +31,7 @@ const experiences = [
     position: "Senior Game Developer",
     image: require("./assets/mhfl.jpg"),
     toolsAndTech: ["Unity 3D", "Blender"],
-    duration: "August 2023 - Current",
+    duration: "August 2023 - September 2024",
     description: [
       "Led development as <b>Senior Game Developer</b>.",
       "Utilized remote collaboration tools, implementing a seamless remote work experience.",
@@ -241,8 +249,8 @@ function App() {
           <div class="occupation">Game Developer | Software Engineer</div>
           <span style={{ marginTop: "1vh" }}>
             {socialLinks.map((social, index) => (
-              <a key={index} href={social.link} target="_blank" rel="noopener noreferrer">
-                <i className={social.className} style={{ fontSize: "1vw", color: "#aaaaaa", margin: "0.4vw" }}></i>
+              <a key={index} href={social.link} target="_blank" rel="noopener noreferrer" className="social-link">
+                <i className={social.className} style={{ fontSize: "1vw", margin: "0.4vw" }}></i>
               </a>
             ))}
           </span>
@@ -250,52 +258,160 @@ function App() {
         </Card>
       </div>
       <div className="right-section">
-        <div className="intro">
-          <div className="title">
-            Bringing <span className="highlight">stories</span> to <span className="highlight">life</span>, one line of <span className="highlight">code</span> at a time
-          </div>
-          <div className="subtitle">
-            An experienced Game Developer and Software Engineer with an unending passion to craft the next big thing.
-          </div>
-          <div className="stats">
-            {stats.map((stat, index) => (
-              <div key={index} className="stat">
-                <div className="amount">{stat.amount}</div>
-                <div className="description">{stat.description}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="projects">
-          <div className="title">
-            Recent <span className="highlight">Projects</span>:
-            <ProjectGrid />
-          </div>
-        </div>
-        <div class="skills">
-          {skills.map((skillCategory, index) => (
-            <div class="skillCategory">
-              {skillCategory.category}:
-              <div class="chipsList">
-                {
-                  skillCategory.chips.map((skill, index) => (
-                    <span class="categoryChip">
-                      <i className={skill.classname} style={{ color: "#ffffff" }}></i>
-                      <div class="skillName">
-                        {skill.name}
-                      </div>
-                    </span>
-                  )
-                  )}
-              </div>
-            </div>
-          ))}
-        </div>
-        <ImageCarousel />
+        <Intro />
+        <Projects />
+        <ExperienceList />
+        <Skills />
+        <Recommendations />
+      </div>
+      <div className="download-resume">
+        DOWNLOAD RESUME
       </div>
     </div>
   );
 }
+
+function Intro() {
+  return (
+    <div className="intro">
+      <div className="title">
+        Bringing <span className="highlight">stories</span> to <span className="highlight">life</span>, one line of <span className="highlight">code</span> at a time
+      </div>
+      <div className="subtitle">
+        An experienced Game Developer and Software Engineer with an unending passion to craft the next big thing.
+      </div>
+      <div className="stats">
+        {stats.map((stat, index) => (
+          <div key={index} className="stat">
+            <div className="amount">{stat.amount}</div>
+            <div className="description">{stat.description}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+function Projects() {
+  return (
+    <div className="projects">
+      <div className="title">
+        Recent <span className="highlight">Projects</span>:
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(15vw, 1fr))',
+            gap: '1vw',
+            paddingTop: '3vh',
+            justifyItems: 'center',
+            height: '100%',
+          }}
+        >
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+function ExperienceList() {
+  return (
+    <div className="experience-container">
+      <div className="title">Work Experience:</div>
+      {experiences.map((exp, index) => (
+        <div
+          className={`experience-card ${index === 0 ? "highlighted" : ""}`}
+          key={index}>
+
+          <img src={exp.image} alt={exp.company} className="experience-image" />
+          <div className="experience-info">
+            <h3 className="company">{exp.company}</h3>
+            <p className="position">{exp.position}</p>
+            <ul className="experience-description">
+              {exp.description.map((desc, i) => (
+                <li key={i} dangerouslySetInnerHTML={{ __html: desc }}></li>
+              ))}
+            </ul>
+            <p className="duration">
+              {exp.duration.split(" ").map((word, i) =>
+                word.toLowerCase() === "current" ? (
+                  <span key={i} className="highlight-current">{word} </span>
+                ) : (
+                  word + " "
+                )
+              )}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+function Skills() {
+  return (
+    <div class="skills">
+      <div className="title">
+        Skillset:
+      </div>
+      {skills.map((skillCategory, index) => (
+        <div class="skillCategory">
+          {skillCategory.category}:
+          <div class="chipsList">
+            {
+              skillCategory.chips.map((skill, index) => (
+                <span class="categoryChip">
+                  <i className={skill.classname} style={{ color: "#ffffff" }}></i>
+                  <div class="skillName">
+                    {skill.name}
+                  </div>
+                </span>
+              )
+              )}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+function Recommendations() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % recommendations.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? recommendations.length - 1 : prevIndex - 1
+    );
+  };
+
+  return (
+
+    <div className="recommendations">
+      <div className="title">
+        Recommendations:
+      </div>
+      <div className="carousel">
+
+        <div className="carouselControls">
+          <button onClick={prevImage} className="cbutton">
+            {"<"}
+          </button>
+          <button onClick={nextImage} className="cbutton">
+            {">"}
+          </button>
+        </div>
+        <img className="image"
+          src={recommendations[currentIndex]}
+          alt={`Recommendation ${currentIndex + 1}`}
+          style={{ width: "100%", height: "auto", borderRadius: "8px", "&:hover": { boxShadow: "0px 0px 4px 4px rgb(0,123,255)" } }}
+        />
+      </div>
+    </div>
+  );
+}
+
 function ProjectCard({ project }) {
   const [isVisible, setIsVisible] = useState(false);
   const videoRef = useRef(null); // Reference to video element
@@ -336,7 +452,7 @@ function ProjectCard({ project }) {
   }, [isVisible]);
 
   return (
-    <div
+    <div className="project-card"
       onClick={handleCardClick}
       style={{
         width: "18vw",
@@ -404,60 +520,5 @@ function ProjectCard({ project }) {
     </div>
   );
 }
-function ProjectGrid() {
-  return (
-    <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(15vw, 1fr))',
-        gap: '1vw',
-        paddingTop: '3vh',
-        justifyItems: 'center',
-        height: '100%',
-      }}
-    >
-      {projects.map((project, index) => (
-        <ProjectCard key={index} project={project} />
-      ))}
-    </div>
-  );
-}
-function ImageCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % recommendations.length);
-  };
-
-  const prevImage = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? recommendations.length - 1 : prevIndex - 1
-    );
-  };
-
-  return (
-
-    <div className="recommendations">
-      <div className="title">
-        Recommendations:
-      </div>
-      <div className="carousel">
-
-        <div className="carouselControls">
-          <button onClick={prevImage} className="cbutton" >
-            {"<"}
-          </button>
-          <button onClick={nextImage} className="cbutton">
-            {">"}
-          </button>
-        </div>
-        <img className="image"
-          src={recommendations[currentIndex]}
-          alt={`Recommendation ${currentIndex + 1}`}
-          style={{ width: "100%", height: "auto", borderRadius: "8px" }}
-        />
-      </div>
-    </div>
-  );
-}
 export default App;
