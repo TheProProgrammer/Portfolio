@@ -10,7 +10,9 @@ const experiences = [
     toolsAndTech: ["Unity 3D"],
     image: require("./assets/hayaland.jpeg"),
     duration: "September 2024 - Current",
-    description: [],
+    description: [  "Transformed client ideas into working features.",
+      "Developed core and supporting game mechanics.",
+      "Worked remotely with a dynamic team."],
   },
   {
     company: "Texinity Pvt. Ltd.",
@@ -264,9 +266,11 @@ function App() {
         <Skills />
         <Recommendations />
       </div>
-      <div className="download-resume">
-        DOWNLOAD RESUME
-      </div>
+      <a href="/Resume.pdf" download="Abdullah Asim Game Developer Resume.pdf">
+        <div className="download-resume">
+          DOWNLOAD RESUME
+        </div>
+      </a>
     </div>
   );
 }
