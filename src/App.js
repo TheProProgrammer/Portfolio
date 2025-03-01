@@ -10,7 +10,7 @@ const experiences = [
     toolsAndTech: ["Unity 3D"],
     image: require("./assets/hayaland.jpeg"),
     duration: "September 2024 - Current",
-    description: [  "Transformed client ideas into working features.",
+    description: ["Transformed client ideas into working features.",
       "Developed core and supporting game mechanics.",
       "Worked remotely with a dynamic team."],
   },
@@ -256,7 +256,7 @@ function App() {
               </a>
             ))}
           </span>
-          <button className="button">Let's Connect</button>
+          <ContactInfo/>
         </Card>
       </div>
       <div className="right-section">
@@ -274,7 +274,6 @@ function App() {
     </div>
   );
 }
-
 function Intro() {
   return (
     <div className="intro">
@@ -523,5 +522,22 @@ function ProjectCard({ project }) {
     </div>
   );
 }
+function ContactInfo() {
+  const [showInfo, setShowInfo] = useState(false);
 
+  return (
+    <div>
+      {!showInfo ? (
+        <button className="button" onClick={() => setShowInfo(true)}>
+          Let's Connect
+        </button>
+      ) : (
+        <div className="contact-info">
+          <p><a href="tel:+923490569480">+92-349-0569480</a></p>
+          <p><a href="mailto:abdullah.asim.0807@gmail.com">abdullah.asim.0807@gmail.com</a></p>
+        </div>
+      )}
+    </div>
+  );
+}
 export default App;
