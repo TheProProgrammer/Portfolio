@@ -230,6 +230,7 @@ function App() {
       <div className="left-section">
         <Card
           sx={{
+            className: "introCard",
             margin: "1vh",
             display: "flex",
             flexDirection: 'column',
@@ -240,6 +241,10 @@ function App() {
             borderRadius: 4,
             backgroundColor: "#2A2B2C",
             width: "80%",
+            boxShadow: {
+              xs: "0px 0px 4px 4px rgb(0,123,255)", // Always apply in mobile (portrait)
+              sm: "none", // Remove in landscape/tablets
+            },
             "&:hover": {
               boxShadow: "0px 0px 4px 4px rgb(0,123,255)",
             },
@@ -300,15 +305,7 @@ function Projects() {
       <div className="title">
         Recent <span className="highlight">Projects</span>:
         <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(15vw, 1fr))',
-            gap: '1vw',
-            paddingTop: '3vh',
-            justifyItems: 'center',
-            height: '100%',
-          }}
-        >
+        className="projectsContainer">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} />
           ))}
@@ -497,25 +494,11 @@ function ProjectCard({ project }) {
 
       <div className="projectDetails">
         <div
-          style={{
-            fontSize: "1vw",
-            marginTop: "0.25vh",
-            lineHeight: "2vh",
-            width: "100%",
-            textAlign: "left",
-          }}
-        >
+        className="projectTitle">
           {project.title}
         </div>
         <p
-          style={{
-            fontSize: "0.8vw",
-            color: "#aaaaaa",
-            marginTop: "1.25vh",
-            lineHeight: "2vh",
-            textAlign: "left",
-          }}
-        >
+        className="projectDescription">
           {project.description}
         </p>
       </div>
