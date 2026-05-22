@@ -94,7 +94,7 @@ const socialLinks = [
     className: "fa-brands fa-github",
   },
   {
-    link: "https://twitter.com/thepprogrammer",
+    link: "https://twitter.com/studiosdesimp",
     className: "fa-brands fa-twitter",
   },
   {
